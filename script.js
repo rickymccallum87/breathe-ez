@@ -1,8 +1,8 @@
 var breathBar = document.querySelector('.breath-bar');
 breathBar.classList.add('breathe-in');
 
-let transitionEndEventName = getTransitionEndEventName();
-breathBar.addEventListener(transitionEndEventName, function () {
+var transitionComplete = getTransitionEndEventName();
+breathBar.addEventListener(transitionComplete, function () {
   breathBar.classList.toggle('breathe-in');
   breathBar.classList.toggle('breathe-out');
 })

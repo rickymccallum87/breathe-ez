@@ -24,6 +24,8 @@ function getTransitionEndEventName() {
 
 var breath = document.querySelector('.breath');
 var settings = document.querySelector('.settings');
+var inInput = document.getElementById('in');
 breath.addEventListener('click', function () {
   settings.classList.toggle('d-none');
+  inInput.focus();
 })

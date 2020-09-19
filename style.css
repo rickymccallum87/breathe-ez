@@ -11,5 +11,6 @@ body {
 }
 
 .breath-bar {
+  transition: height 5s;
   background-color: blue;
 }

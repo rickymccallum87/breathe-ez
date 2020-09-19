@@ -5,7 +5,7 @@ var transitionComplete = getTransitionEndEventName();
 breathBar.addEventListener(transitionComplete, function () {
   breathBar.classList.toggle('breathe-in');
   breathBar.classList.toggle('breathe-out');
-})
+});
 
 function getTransitionEndEventName() {
   var transitions = {
@@ -23,9 +23,14 @@ function getTransitionEndEventName() {
 }
 
 var breath = document.querySelector('.breath');
-var settings = document.querySelector('.settings');
+var settingsModal = document.querySelector('.settings-modal');
 var inInput = document.getElementById('in');
 breath.addEventListener('click', function () {
-  settings.classList.toggle('d-none');
+  settingsModal.classList.toggle('d-none');
   inInput.focus();
-})
+});
+
+var close = document.querySelector('.close');
+close.addEventListener('click', function () {
+  settingsModal.classList.toggle('d-none');
+});

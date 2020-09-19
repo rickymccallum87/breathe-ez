@@ -22,7 +22,8 @@ function getTransitionEndEventName() {
   }
 }
 
+var breath = document.querySelector('.breath');
 var settings = document.querySelector('.settings');
-document.addEventListener('click', function () {
+breath.addEventListener('click', function () {
   settings.classList.toggle('d-none');
 })

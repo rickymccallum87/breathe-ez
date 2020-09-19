@@ -14,3 +14,11 @@ body {
   transition: height 5s;
   background-color: blue;
 }
+
+.breathe-in {
+  height: 100%;
+}
+
+.breathe-out {
+  height: 0%;
+}

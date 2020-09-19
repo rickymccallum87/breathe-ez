@@ -13,6 +13,7 @@ body {
 
 .breath-bar {
   height: 0%;
+  transition-timing-function: ease-in-out;
   background-color: blue;
 }
 

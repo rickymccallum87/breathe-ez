@@ -21,3 +21,8 @@ function getTransitionEndEventName() {
     }
   }
 }
+
+var settings = document.querySelector('.settings');
+document.addEventListener('click', function () {
+  settings.classList.toggle('d-none');
+})

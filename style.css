@@ -25,3 +25,7 @@ body {
   transition: height 6s;
   height: 0%;
 }
+
+.d-none {
+  display: none;
+}

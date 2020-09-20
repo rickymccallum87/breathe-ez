@@ -3,6 +3,7 @@
 
 # TODO
 - [x] Add settings modal
-- [ ] Save breath durations
+- [ ] Apply breath durations
+- [ ] Save breath durations between sessions
 - [ ] Add hold durations
 - [ ] Add color themes

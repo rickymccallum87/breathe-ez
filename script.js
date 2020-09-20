@@ -33,16 +33,17 @@ $(function () {
 
   // Show settings modal
   $('#settingsModal').on('shown.bs.modal', function () {
+
+    // Store previous settings
+    $('.settings input').each(function (event) {
+      var inputID = $(this).get(0).id;
+      var inputValue = $(this).val();
+      previousSettings[inputID] = inputValue ? Number(inputValue) : defaultSettings[inputID];
+    });
+
     // Focus first input
     $('.settings input').first().select();
   })
-
-  // Change settings
-  $('.settings input').change(function (event) {
-    var inputID = $(this).get(0).id;
-    var value = $(this).val();
-    settings[inputID] = value ? Number(value) : defaultSettings[inputID];
-  });
 
   // Submit settings
   $('.settings').submit(function (event) {
@@ -57,5 +58,21 @@ $(function () {
     breath.stop();
     breath.height('0%');
     breath.animate(lungsFull, settings.secondsIn * 1000, breathe);
+  });
+
+  // Cancel settings
+  $('#settingsModal').on('hidden.bs.modal', function () {
+
+    // Does previousSettings have values?
+    if (Object.keys(previousSettings).length) {
+      $('.settings input').each(function (event) {
+        var inputID = $(this).get(0).id;
+        if (previousSettings[inputID] == defaultSettings[inputID]) {
+          $(this).val('');
+        } else {
+          $(this).val(previousSettings[inputID] ? previousSettings[inputID] : defaultSettings[inputID])
+        }
+      });
+    }
   });
 });

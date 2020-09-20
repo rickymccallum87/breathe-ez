@@ -1,12 +1,4 @@
-var breathBar = document.querySelector('.breath-bar');
-breathBar.classList.add('breathe-in');
-
 var transitionComplete = getTransitionEndEventName();
-breathBar.addEventListener(transitionComplete, function () {
-  breathBar.classList.toggle('breathe-in');
-  breathBar.classList.toggle('breathe-out');
-});
-
 function getTransitionEndEventName() {
   var transitions = {
     "transition": "transitionend",
@@ -22,7 +14,19 @@ function getTransitionEndEventName() {
   }
 }
 
-$('.settings').on('submit', (event) => {
-  event.preventDefault();
-  console.log(event);
+// When DOM is ready
+$(function () {
+  $('.breath-bar')
+    // Start by breathing in
+    .addClass('breathe-in')
+    // Loop breathing
+    .on(transitionComplete, function () {
+      $('.breath-bar').toggleClass('breathe-in breathe-out');
+    });
+
+  // When settings form is submitted
+  $('.settings').on('submit', function (event) {
+    // Prevent page reload
+    event.preventDefault();
+  });
 });

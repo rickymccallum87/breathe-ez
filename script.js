@@ -34,8 +34,7 @@ $(function () {
 
   // When a setting value is changed
   $('.settings input').change(function (event) {
-    console.log($(this));
-    console.log(event);
+    settings[$(this).get(0).id] = $(this).val() ? $(this).val() : defaultSettings[$(this).get(0).id];
   });
 
   // When settings form is submitted

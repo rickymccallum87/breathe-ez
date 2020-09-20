@@ -51,6 +51,16 @@ $(function () {
     // Prevent form submission
     event.preventDefault();
 
+    // Clear previous settings
+    previousSettings = {};
+
+    // Change settings
+    $('.settings input').each(function (event) {
+      var inputID = $(this).get(0).id;
+      var inputValue = $(this).val();
+      settings[inputID] = inputValue ? Number(inputValue) : defaultSettings[inputID];
+    });
+
     // Hide modal
     $('#settingsModal').modal('hide');
 

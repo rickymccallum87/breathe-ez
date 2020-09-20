@@ -13,9 +13,8 @@ $(function () {
     settings[$(this).get(0).id] = $(this).val() ? Number($(this).val()) : Number(defaultSettings[$(this).get(0).id]);
   });
 
-  breathBar
-    // Start by breathing in
-    .animate(lungsFull, settings.secondsIn * 1000, breathe);
+  // Start by breathing in
+  breathBar.animate(lungsFull, settings.secondsIn * 1000, breathe);
 
   function breathe() {
     if (breathBar.height() == 0) {
@@ -36,7 +35,6 @@ $(function () {
   // When a setting value is changed
   $('.settings input').change(function (event) {
     settings[$(this).get(0).id] = $(this).val() ? Number($(this).val()) : Number(defaultSettings[$(this).get(0).id]);
-    console.log(settings);
   });
 
   // When settings form is submitted

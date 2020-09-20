@@ -4,7 +4,8 @@
 # TODO
 - [x] Add settings modal
 - [x] Apply breath durations
+- [x] Revert to previous settings on close without saving
 - [ ] Save breath durations between sessions
 - [ ] Add hold durations
-- [ ] Add default durations (4:6, 5:5:5:5)
+- [ ] Add templates (4:6, 5:5:5:5)
 - [ ] Add color themes

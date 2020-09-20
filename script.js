@@ -10,7 +10,9 @@ $(function () {
   };
 
   $('.settings input').each(function (event) {
-    settings[$(this).get(0).id] = $(this).val() ? Number($(this).val()) : Number(defaultSettings[$(this).get(0).id]);
+    var inputID = $(this).get(0).id;
+    var value = $(this).val();
+    settings[inputID] = value ? Number(value) : defaultSettings[inputID];
   });
 
   // Start by breathing in
@@ -34,7 +36,9 @@ $(function () {
 
   // When a setting value is changed
   $('.settings input').change(function (event) {
-    settings[$(this).get(0).id] = $(this).val() ? Number($(this).val()) : Number(defaultSettings[$(this).get(0).id]);
+    var inputID = $(this).get(0).id;
+    var value = $(this).val();
+    settings[inputID] = value ? Number(value) : defaultSettings[inputID];
   });
 
   // When settings form is submitted

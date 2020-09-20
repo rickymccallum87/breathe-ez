@@ -1,15 +1,16 @@
 .breath-bar {
   height: 0%;
   transition-timing-function: ease-in-out;
+  transition-property: height;
 }
 
 .breathe-in {
-  transition: height 4s;
+  transition-duration: 4s;
   height: 100%;
 }
 
 .breathe-out {
-  transition: height 6s;
+  transition-duration: 6s;
   height: 0%;
 }
 

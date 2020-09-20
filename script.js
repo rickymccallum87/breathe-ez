@@ -25,13 +25,13 @@ $(function () {
     });
 
   // When settings modal appears
-  $('#settingsModal').on('shown.bs.modal', function (e) {
+  $('#settingsModal').on('shown.bs.modal', function () {
     // Focus first input
-    $('.settings input').first().focus();
+    $('.settings input').first().select();
   })
 
   // When settings form is submitted
-  $('.settings').on('submit', function (event) {
+  $('.settings').submit(function (event) {
     // Prevent page reload
     event.preventDefault();
     // Hide modal

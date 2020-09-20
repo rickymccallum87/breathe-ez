@@ -30,10 +30,12 @@
           <form class="settings">
             <div class="form-row">
               <div class="col-12 col-sm-6 mb-3">
-                <input type="number" class="form-control" id="in" name="in" placeholder="In (seconds)">
+                <label for="secondsIn">In</label>
+                <input type="number" class="form-control" id="secondsIn" min="1" placeholder="4">
               </div>
               <div class="col-12 col-sm-6 mb-3">
-                <input type="number" class="form-control" id="out" name="out" placeholder="Out (seconds)">
+                <label for="secondsOut">Out</label>
+                <input type="number" class="form-control" id="secondsOut" min="1" placeholder="6">
               </div>
             </div>
             <button type="submit" class="btn btn-primary float-right">Save Changes</button>

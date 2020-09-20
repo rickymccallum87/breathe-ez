@@ -3,20 +3,26 @@ $(function () {
   var breathBar = $('.breath-bar');
   var lungsFull = { height: '100%' };
   var lungsEmpty = { height: '0%' };
-  var secondsIn = 4;
-  var secondsOut = 6;
+  var settings = {
+    secondsIn: 4,
+    secondsOut: 6,
+  };
+  var defaultSettings = {
+    secondsIn: 4,
+    secondsOut: 6,
+  };
 
   breathBar
     // Start by breathing in
-    .animate(lungsFull, secondsIn * 1000, breathe);
+    .animate(lungsFull, settings.secondsIn * 1000, breathe);
 
   function breathe() {
     if (breathBar.height() == 0) {
       // Breathe in
-      breathBar.animate(lungsFull, secondsIn * 1000, breathe);
+      breathBar.animate(lungsFull, settings.secondsIn * 1000, breathe);
     } else {
       // Breathe out
-      breathBar.animate(lungsEmpty, secondsOut * 1000, breathe);
+      breathBar.animate(lungsEmpty, settings.secondsOut * 1000, breathe);
     }
   }
 

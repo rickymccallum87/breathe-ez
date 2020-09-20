@@ -21,16 +21,3 @@ function getTransitionEndEventName() {
     }
   }
 }
-
-var breath = document.querySelector('.breath');
-var settingsModal = document.querySelector('.settings-modal');
-var inInput = document.getElementById('in');
-breath.addEventListener('click', function () {
-  settingsModal.classList.toggle('d-none');
-  inInput.focus();
-});
-
-var close = document.querySelector('.close');
-close.addEventListener('click', function () {
-  settingsModal.classList.toggle('d-none');
-});

@@ -31,17 +31,6 @@
   border-radius: 0.25rem;
 }
 
-.close {
-  position: fixed;
-  top: 0;
-  right: 0;
-  color: #fff;
-  font-size: 28px;
-  font-weight: bold;
-  cursor: pointer;
-  padding: 0.5rem 1rem;
-}
-
 .d-none {
   display: none;
 }

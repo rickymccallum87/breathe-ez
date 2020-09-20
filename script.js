@@ -10,7 +10,7 @@ $(function () {
   };
 
   $('.settings input').each(function (event) {
-    settings[$(this).get(0).id] = $(this).val() ? $(this).val() : defaultSettings[$(this).get(0).id];
+    settings[$(this).get(0).id] = $(this).val() ? Number($(this).val()) : Number(defaultSettings[$(this).get(0).id]);
   });
 
   breathBar
@@ -35,7 +35,8 @@ $(function () {
 
   // When a setting value is changed
   $('.settings input').change(function (event) {
-    settings[$(this).get(0).id] = $(this).val() ? $(this).val() : defaultSettings[$(this).get(0).id];
+    settings[$(this).get(0).id] = $(this).val() ? Number($(this).val()) : Number(defaultSettings[$(this).get(0).id]);
+    console.log(settings);
   });
 
   // When settings form is submitted

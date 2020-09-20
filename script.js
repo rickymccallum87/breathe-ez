@@ -1,11 +1,12 @@
 $(function () {
-  var breathBar = $('.breath-bar');
+  var breath = $('.breath');
   var lungsFull = { height: '100%' };
   var lungsEmpty = { height: '0%' };
   var defaultSettings = {
     secondsIn: 4,
     secondsOut: 6,
   };
+  var previousSettings = {};
   var settings = {};
 
   // Load settings
@@ -16,16 +17,16 @@ $(function () {
   });
 
   // Breathe in
-  breathBar.animate(lungsFull, settings.secondsIn * 1000, breathe);
+  breath.animate(lungsFull, settings.secondsIn * 1000, breathe);
 
   function breathe() {
     // Are lungs empty?
-    if (breathBar.height() == 0) {
+    if (breath.height() == 0) {
       // Breathe in
-      breathBar.animate(lungsFull, settings.secondsIn * 1000, breathe);
+      breath.animate(lungsFull, settings.secondsIn * 1000, breathe);
     } else {
       // Breathe out
-      breathBar.animate(lungsEmpty, settings.secondsOut * 1000, breathe);
+      breath.animate(lungsEmpty, settings.secondsOut * 1000, breathe);
     }
   }
 

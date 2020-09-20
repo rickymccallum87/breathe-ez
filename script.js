@@ -28,5 +28,7 @@ $(function () {
   $('.settings').on('submit', function (event) {
     // Prevent page reload
     event.preventDefault();
+    // Hide modal
+    $('#settingsModal').modal('hide');
   });
 });

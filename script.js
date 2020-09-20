@@ -52,5 +52,10 @@ $(function () {
 
     // Hide modal
     $('#settingsModal').modal('hide');
+
+    // Restart breath
+    breath.stop();
+    breath.height('0%');
+    breath.animate(lungsFull, settings.secondsIn * 1000, breathe);
   });
 });

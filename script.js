@@ -1,34 +1,36 @@
-var transitionComplete = getTransitionEndEventName();
-function getTransitionEndEventName() {
-  var transitions = {
-    "transition": "transitionend",
-    "OTransition": "oTransitionEnd",
-    "MozTransition": "transitionend",
-    "WebkitTransition": "webkitTransitionEnd"
-  }
-  let bodyStyle = document.body.style;
-  for (let transition in transitions) {
-    if (bodyStyle[transition] != undefined) {
-      return transitions[transition];
-    }
-  }
-}
-
 // When DOM is ready
 $(function () {
-  $('.breath-bar')
+  var breathBar = $('.breath-bar');
+  var lungsFull = { height: '100%' };
+  var lungsEmpty = { height: '0%' };
+  var secondsIn = 4;
+  var secondsOut = 6;
+
+  breathBar
     // Start by breathing in
-    .addClass('breathe-in')
-    // Loop breathing
-    .on(transitionComplete, function () {
-      $('.breath-bar').toggleClass('breathe-in breathe-out');
-    });
+    .animate(lungsFull, secondsIn * 1000, breathe);
+
+  function breathe() {
+    if (breathBar.height() == 0) {
+      // Breathe in
+      breathBar.animate(lungsFull, secondsIn * 1000, breathe);
+    } else {
+      // Breathe out
+      breathBar.animate(lungsEmpty, secondsOut * 1000, breathe);
+    }
+  }
 
   // When settings modal appears
   $('#settingsModal').on('shown.bs.modal', function () {
     // Focus first input
     $('.settings input').first().select();
   })
+
+  // When a setting value is changed
+  $('.settings input').change(function (event) {
+    console.log($(this));
+    console.log(event);
+  });
 
   // When settings form is submitted
   $('.settings').submit(function (event) {

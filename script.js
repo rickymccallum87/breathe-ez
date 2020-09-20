@@ -24,6 +24,12 @@ $(function () {
       $('.breath-bar').toggleClass('breathe-in breathe-out');
     });
 
+  // When settings modal appears
+  $('#settingsModal').on('shown.bs.modal', function (e) {
+    // Focus first input
+    $('.settings input').first().focus();
+  })
+
   // When settings form is submitted
   $('.settings').on('submit', function (event) {
     // Prevent page reload

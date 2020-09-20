@@ -3,14 +3,15 @@ $(function () {
   var breathBar = $('.breath-bar');
   var lungsFull = { height: '100%' };
   var lungsEmpty = { height: '0%' };
-  var settings = {
-    secondsIn: 4,
-    secondsOut: 6,
-  };
+  var settings = {};
   var defaultSettings = {
     secondsIn: 4,
     secondsOut: 6,
   };
+
+  $('.settings input').each(function (event) {
+    settings[$(this).get(0).id] = $(this).val() ? $(this).val() : defaultSettings[$(this).get(0).id];
+  });
 
   breathBar
     // Start by breathing in

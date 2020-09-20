@@ -19,6 +19,7 @@ $(function () {
   // Breathe in
   breath.animate(lungsFull, settings.secondsIn * 1000, breathe);
 
+  // Loop breathing
   function breathe() {
     // Are lungs empty?
     if (breath.height() == 0) {
@@ -30,7 +31,7 @@ $(function () {
     }
   }
 
-  // Display settings
+  // Show settings modal
   $('#settingsModal').on('shown.bs.modal', function () {
     // Focus first input
     $('.settings input').first().select();
@@ -45,8 +46,10 @@ $(function () {
 
   // Submit settings
   $('.settings').submit(function (event) {
-    // Prevent page reload
+
+    // Prevent form submission
     event.preventDefault();
+
     // Hide modal
     $('#settingsModal').modal('hide');
   });

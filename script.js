@@ -21,3 +21,8 @@ function getTransitionEndEventName() {
     }
   }
 }
+
+$('.settings').on('submit', (event) => {
+  event.preventDefault();
+  console.log(event);
+});

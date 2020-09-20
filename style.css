@@ -6,12 +6,12 @@
 
 .breathe-in {
   transition-duration: 4s;
-  transition-delay: 0;
+  transition-delay: 0s;
   height: 100%;
 }
 
 .breathe-out {
   transition-duration: 6s;
-  transition-delay: 0;
+  transition-delay: 0s;
   height: 0%;
 }

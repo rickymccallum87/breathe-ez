@@ -1,19 +1,6 @@
-body {
-  margin: 0;
-  height: 100vh;
-}
-
-.breath {
-  height: 100%;
-  display: flex;
-  flex-direction: column-reverse;
-  background-color: gray;
-}
-
 .breath-bar {
   height: 0%;
   transition-timing-function: ease-in-out;
-  background-color: blue;
 }
 
 .breathe-in {

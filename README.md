@@ -1,5 +1,6 @@
 # [breathe-ez](https://rickymccallum87.github.io/breathe-ez/)
  A visualizer that helps you breathe rhythmically
+ https://rickymccallum87.github.io/breathe-ez/
 
 # TODO
 - [x] Add settings modal
